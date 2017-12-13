@@ -1,0 +1,7 @@
+<p>
+  todo-list works!
+</p>
+<ul>
+  <li *ngFor="let task of todoList">{{task}}</li>
+</ul>
+<input (keyup.enter)="addTask($event.target.value)" [value]="test">
