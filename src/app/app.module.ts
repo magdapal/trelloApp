@@ -7,6 +7,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { InProgressListComponent } from './in-progress-list/in-progress-list.component';
 import { DoneListComponent } from './done-list/done-list.component';
 import { InputAddTaskComponent } from './input-add-task/input-add-task.component';
+import { ItemTodoComponent } from './item-todo/item-todo.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { InputAddTaskComponent } from './input-add-task/input-add-task.component
     TodoListComponent,
     InProgressListComponent,
     DoneListComponent,
-    InputAddTaskComponent
+    InputAddTaskComponent,
+    ItemTodoComponent
   ],
   imports: [
     BrowserModule

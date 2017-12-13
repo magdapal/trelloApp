@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-input-add-task',
@@ -8,16 +8,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class InputAddTaskComponent implements OnInit {
 
   valueInput: string = '';
-  
-  @Output() submit:EventEmitter<any> = new EventEmitter();
+   @Output() submit:EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+     
   }
-
+  
   changeTask(newTask: string): void {
-    this.submit.emit(newTask);
-    this.valueInput = null; 
+     this.submit.emit(newTask);
+     this.valueInput = null;
   }
 }

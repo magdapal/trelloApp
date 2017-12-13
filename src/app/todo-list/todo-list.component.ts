@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-
+  inputValue: string = "";
+  
   todoList: any[] = [];
-   
+    
   constructor() { }
 
   ngOnInit() {
@@ -16,5 +17,9 @@ export class TodoListComponent implements OnInit {
 
   addTask(task: string) : void {
     this.todoList.push(task);
+    this.inputValue = null;
+
+     
   }
+  
 }
