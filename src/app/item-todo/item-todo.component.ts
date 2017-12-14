@@ -13,5 +13,4 @@ export class ItemTodoComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

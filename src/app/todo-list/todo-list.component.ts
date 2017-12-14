@@ -15,8 +15,7 @@ export class TodoListComponent implements OnInit {
   }
 
   addTask(task: string) : void {
-     
     this.todoList.push(task);
-     
   }
+  
 }
