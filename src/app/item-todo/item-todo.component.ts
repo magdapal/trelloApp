@@ -19,7 +19,6 @@ export class ItemTodoComponent implements OnInit {
   
   removeItem(taskTitle) {
      this.remove.emit(taskTitle);
-     debugger
-  }
+   }
 
 }
