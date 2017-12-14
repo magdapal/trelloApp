@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-item-todo',
@@ -8,9 +8,18 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ItemTodoComponent implements OnInit {
 
   @Input() taskTitle: string;
+  @Output() remove:EventEmitter<any> = new EventEmitter;
+
+  element: string;
 
   constructor() { }
 
   ngOnInit() {
   }
+  
+  removeItem(taskTitle) {
+     this.remove.emit(taskTitle);
+     debugger
+  }
+
 }

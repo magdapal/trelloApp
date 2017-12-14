@@ -17,5 +17,11 @@ export class TodoListComponent implements OnInit {
   addTask(task: string) : void {
     this.todoList.push(task);
   }
-  
+  removeItem(element) {
+    debugger
+    const index: number = this.todoList.indexOf(element);
+    if (index !==-1) {
+      this.todoList.splice(index,1)
+    }
+  }
 }
