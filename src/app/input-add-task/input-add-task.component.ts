@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class InputAddTaskComponent implements OnInit {
 
-  valueInput: string = '';
+   valueInput: string = '';
    @Output() submit:EventEmitter<any> = new EventEmitter();
 
   constructor() { }

@@ -1,1 +1,2 @@
-<input [value]="valueInput" (keyup.enter)="changeTask($event.target.value)">
+<input [value]="valueInput" (keyup.enter)="changeTask($event.target.value)" (input)="valueInput=$event.target.value">
+ 
