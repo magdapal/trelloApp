@@ -8,6 +8,7 @@ import { DoneListComponent } from './done-list/done-list.component';
 import { InputAddTaskComponent } from './input-add-task/input-add-task.component';
 import { ItemTodoComponent } from './item-todo/item-todo.component';
 import { DragulaModule } from 'ng2-dragula/ng2-dragula';
+import { ListStorageService } from './list-storage.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { DragulaModule } from 'ng2-dragula/ng2-dragula';
     BrowserModule,
     DragulaModule
   ],
-  providers: [],
+  providers: [ListStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

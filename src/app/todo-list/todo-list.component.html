@@ -4,8 +4,9 @@
   </p>
   <ul>
     <li *ngFor="let task of todoList">
-      <app-item-todo [taskTitle]="task" (remove)="removeItem($event)"></app-item-todo>
+      <app-item-todo [taskTitle]="task" (remove)="destroyTask($event)"></app-item-todo>
     </li>
   </ul>
   <app-input-add-task (submit)="addTask($event)"></app-input-add-task>
  </div>
+ 

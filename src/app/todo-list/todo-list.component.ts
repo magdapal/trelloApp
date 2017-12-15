@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ListStorageService } from '../list-storage.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -6,22 +7,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-   
+
   todoList: any[] = [];
     
-  constructor() { }
+  constructor(private storage:ListStorageService) { }
 
   ngOnInit() {
+    this.todoList = this.getTodoList();
   }
 
-  addTask(task: string) : void {
-    this.todoList.push(task);
+  addTask(task: string)  {
+     this.todoList = this.storage.post(task);
   }
-  removeItem(element) {
-    debugger
-    const index: number = this.todoList.indexOf(element);
-    if (index !==-1) {
-      this.todoList.splice(index,1)
-    }
+
+  getTodoList() {
+     return this.storage.get();
+  }
+
+  destroyTask(task) {
+     this.todoList = this.storage.destroy(task);
   }
 }
