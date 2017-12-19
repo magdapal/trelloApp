@@ -20,7 +20,9 @@ export class TodoListComponent implements OnInit {
   }
 
   addTask(task: string)  {
-     return this.storage.post(task, "todoList", "list");
+     if(task.length>0) {
+       return this.storage.post(task, "todoList", "list");
+     }
   }
 
   destroyTask(task) {
