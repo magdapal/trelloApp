@@ -1,5 +1,17 @@
 <div class="list">
-  <p>
-    in-progress-list works!
-  </p>
+  <h4 class="text-center list-title">
+    IN PROGRESS
+  </h4>
+  <ul>
+    <li *ngFor="let taskInProgress of inProgressArray">
+      <p>{{taskInProgress}}</p>
+      <fa name="arrow-left" (click)="moveToTodoList(taskInProgress)">Move</fa>
+      <fa name="arrow-right" (click)="moveToDoneList(taskInProgress)">Move1</fa>
+    </li>
+  </ul>
 </div>
+
+ 
+
+
+

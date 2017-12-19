@@ -1,0 +1,20 @@
+.single-task {
+    border: 1px solid #ACABAB;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+
+    fa[name="close"] {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      cursor: pointer;
+      color: #ACABAB;
+    }
+    fa[name="arrow-right"] {
+        cursor: pointer;
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+    }
+}

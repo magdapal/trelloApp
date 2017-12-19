@@ -10,6 +10,7 @@ export class InputAddTaskComponent implements OnInit {
   valueInput: string = '';
   @Output() submit:EventEmitter<any> = new EventEmitter();
 
+  shownInput: boolean;
   constructor() { }
 
   ngOnInit() {
@@ -17,7 +18,12 @@ export class InputAddTaskComponent implements OnInit {
   }
   
   changeTask(newTask: string): void {
+    debugger
     this.submit.emit(newTask);
     this.valueInput = null;
+  }
+  
+  showInput() {
+    this.shownInput=true;
   }
 }

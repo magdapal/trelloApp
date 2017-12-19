@@ -1,1 +1,24 @@
- 
+.list {
+	.list-title {
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-bottom: 30px;
+	}
+	ul {
+		list-style-type: none;
+		li {
+			border: 1px solid #ACABAB;
+			padding: 20px;
+			margin-bottom: 20px;
+			position: relative;
+			
+			fa[name="arrow-left"] {
+				cursor: pointer;
+				position: absolute;
+				bottom: 5px;
+				right: 10px;
+			}
+		}
+	}
+}
+

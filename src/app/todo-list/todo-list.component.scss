@@ -1,1 +1,10 @@
- 
+.list {
+  .list-title {
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-bottom: 30px;		
+	}
+	ul {
+    list-style-type: none;
+  }
+}

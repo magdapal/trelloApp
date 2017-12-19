@@ -9,9 +9,10 @@ export class ItemTodoComponent implements OnInit {
 
   @Input() taskTitle: string;
   @Output() remove:EventEmitter<any> = new EventEmitter;
+  @Output() move:EventEmitter<any> = new EventEmitter;
+  
 
-  element: string;
-
+ 
   constructor() { }
 
   ngOnInit() {
@@ -19,6 +20,10 @@ export class ItemTodoComponent implements OnInit {
   
   removeItem(taskTitle) {
      this.remove.emit(taskTitle);
+   }
+
+   moveTask(taskTitle) {
+     this.move.emit(taskTitle);
    }
 
 }

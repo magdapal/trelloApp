@@ -1,5 +1,11 @@
 <div class="list">
-  <p>
-    done-list works!
-  </p>
+  <h4 class="text-center list-title">
+    DONE
+  </h4>
+  <ul>
+    <li *ngFor="let doneTask of doneListTasks">
+      <p>{{doneTask}}</p>
+      <fa name="arrow-left" (click)="moveToInProgressList(doneTask)">Move</fa>
+    </li>
+  </ul>
 </div>

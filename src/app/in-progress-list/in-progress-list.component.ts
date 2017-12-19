@@ -1,3 +1,5 @@
+import { ListStorageService } from './../list-storage.service';
+import { TaskStatusService } from '../task-status.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InProgressListComponent implements OnInit {
 
-  constructor() { }
+  inProgressArray = this.storage.inProgressList;
+  
+  constructor(private taskStatus:TaskStatusService, private storage:ListStorageService) {
+  }
 
   ngOnInit() {
   }
 
+  moveToTodoList(task) {
+     this.storage.post(task, "todoList", "list");
+     return this.storage.destroy(task, "inProgressList", "list1");
+  }
+
+  moveToDoneList(task) {
+      this.storage.post(task, "doneList", "list2");
+      return this.storage.destroy(task, "inProgressList", "list1");
+  }
 }

@@ -1,0 +1,11 @@
+.addTask {
+    margin: 40px 0 40px 40px;
+    .add-task-title, .add-task-input {
+        display: inline-block
+    }
+    .add-task-title {
+        margin-right: 10px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}

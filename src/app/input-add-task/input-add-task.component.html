@@ -1,2 +1,7 @@
-<input [value]="valueInput" (keyup.enter)="changeTask($event.target.value)" (input)="valueInput=$event.target.value">
- 
+<div class="addTask">
+    <p (click) = "showInput()" class="add-task-title">Add new task</p>
+    <div *ngIf="shownInput" class="add-task-input">
+        <input [value]="valueInput" #valueInputt (keyup.enter)="changeTask($event.target.value)" (input)="valueInput=$event.target.value">
+        <button (click)="changeTask(valueInputt.value)" class="btn btn-danger">Submit</button>      
+    </div>       
+</div>

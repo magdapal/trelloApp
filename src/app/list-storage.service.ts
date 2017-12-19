@@ -1,36 +1,46 @@
 import { Injectable } from '@angular/core';
 const storageName = 'list';
+const storageName1 = 'list1';
+const storageName2 = 'list2';
+
 
 const defaultList = [];
 
 @Injectable()
 export class ListStorageService {
 
-  private todoList;
+  todoList;
+  inProgressList;
+  doneList;
 
-  private update() {
-    localStorage.setItem(storageName, JSON.stringify(this.todoList));
-    return this.get();
+  private update(typeOfList, nameOfStorage) {
+    localStorage.setItem(nameOfStorage, JSON.stringify(this[typeOfList]));
+    return this.get(typeOfList);
   }
-  private findItemIndex(task) {
-    return this.todoList.indexOf(task);
+  private findItemIndex(task, typeOfList) {
+    return this[typeOfList].indexOf(task);
   }
   constructor() { 
      this.todoList = JSON.parse(localStorage.getItem(storageName)) || defaultList;  
+     this.inProgressList = JSON.parse(localStorage.getItem(storageName1)) || defaultList; 
+     this.doneList = JSON.parse(localStorage.getItem(storageName2)) || defaultList;  
   }
 
-  get() {
-    return [...this.todoList];
+  get(typeOfList) {
+      return [...this[typeOfList]];
   }
   
-  post(task) {
-    this.todoList.push(task);
-    return this.update();
+  post(task, typeOfList, nameOfStorage) {
+    this[typeOfList].push(task);
+     return this.update(typeOfList, nameOfStorage);
   }
 
-  destroy(task) {
-    this.todoList.splice(this.findItemIndex(task), 1);
-    return this.update();
+  destroy(task, typeOfList, nameOfStorage) {
+      if(JSON.parse(localStorage.getItem(nameOfStorage))[this[typeOfList].indexOf(task)] == task) {
+      this[typeOfList].splice(this.findItemIndex(task, typeOfList), 1);
+      return this.update(typeOfList, nameOfStorage);
+    } else {
+      alert("You deleted already this task on other tab!")
+    }
   }
-
 }

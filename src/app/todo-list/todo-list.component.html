@@ -1,10 +1,10 @@
 <div class="list">
-  <p>
-    todo-list works!
-  </p>
+  <h4 class="text-center list-title">
+    TODO
+  </h4>
   <ul>
     <li *ngFor="let task of todoList">
-      <app-item-todo [taskTitle]="task" (remove)="destroyTask($event)"></app-item-todo>
+      <app-item-todo [taskTitle]="task" (remove)="destroyTask($event)" (move)="moveTask($event)"></app-item-todo>
     </li>
   </ul>
   <app-input-add-task (submit)="addTask($event)"></app-input-add-task>

@@ -1,4 +1,8 @@
-<p>{{taskTitle}}</p>
-<button class="btn btn-danger" (click)="removeItem(taskTitle)">Delete</button>
+<div class="single-task">
+  <p>{{taskTitle}}</p>
+  <fa name="close" (click)="removeItem(taskTitle)"></fa>
+  <fa name="arrow-right" (click)="moveTask(taskTitle)"></fa>
+</div>
+
 
 
