@@ -33,7 +33,7 @@ export class ListStorageService {
   }
   
   post(task, typeOfList, nameOfStorage) {
-      this.todoList.push(task);
+      this[typeOfList].push(task);
       return this.update(typeOfList, nameOfStorage);
   }
 
