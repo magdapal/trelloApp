@@ -9,7 +9,6 @@ import { InputAddTaskComponent } from './input-add-task/input-add-task.component
 import { ItemTodoComponent } from './item-todo/item-todo.component';
 import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 import { ListStorageService } from './list-storage.service';
-import { TaskStatusService } from './task-status.service';
 import {AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
@@ -27,7 +26,7 @@ import {AngularFontAwesomeModule } from 'angular-font-awesome';
     DragulaModule,
     AngularFontAwesomeModule
   ],
-  providers: [ListStorageService, TaskStatusService],
+  providers: [ListStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

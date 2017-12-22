@@ -5,6 +5,8 @@ const storageName2 = 'list2';
 
 
 const defaultList = [];
+const defaultList1 = [];
+const defaultList2 = [];
 
 @Injectable()
 export class ListStorageService {
@@ -15,15 +17,15 @@ export class ListStorageService {
 
   private update(typeOfList, nameOfStorage) {
     localStorage.setItem(nameOfStorage, JSON.stringify(this[typeOfList]));
-    return this.get(typeOfList);
+     return this.get(typeOfList);
   }
   private findItemIndex(task, typeOfList) {
     return this[typeOfList].indexOf(task);
   }
   constructor() { 
      this.todoList = JSON.parse(localStorage.getItem(storageName)) || defaultList;  
-     this.inProgressList = JSON.parse(localStorage.getItem(storageName1)) || defaultList; 
-     this.doneList = JSON.parse(localStorage.getItem(storageName2)) || defaultList;  
+     this.inProgressList = JSON.parse(localStorage.getItem(storageName1)) || defaultList1; 
+     this.doneList = JSON.parse(localStorage.getItem(storageName2)) || defaultList2;  
   }
 
   get(typeOfList) {
@@ -31,8 +33,8 @@ export class ListStorageService {
   }
   
   post(task, typeOfList, nameOfStorage) {
-    this[typeOfList].push(task);
-     return this.update(typeOfList, nameOfStorage);
+      this.todoList.push(task);
+      return this.update(typeOfList, nameOfStorage);
   }
 
   destroy(task, typeOfList, nameOfStorage) {

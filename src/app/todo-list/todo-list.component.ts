@@ -1,4 +1,3 @@
-import { TaskStatusService } from '../task-status.service';
 import { InProgressListComponent } from './../in-progress-list/in-progress-list.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { ListStorageService } from '../list-storage.service';
@@ -12,7 +11,7 @@ export class TodoListComponent implements OnInit {
 
   todoList: any[] = this.storage.todoList;
  
-  constructor(private storage:ListStorageService, private taskStatus:TaskStatusService) {
+  constructor(private storage:ListStorageService) {
   }
   
   ngOnInit() {
